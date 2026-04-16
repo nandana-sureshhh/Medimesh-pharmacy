@@ -1,19 +1,18 @@
-# Pharmacy ClusterIP Service
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .Values.service.name }}
+  name: {{ .Values.pharmacy.service.name }}
   namespace: {{ .Values.global.namespaces.backend }}
   labels:
-    app: {{ .Values.name }}
+    app: {{ .Values.pharmacy.name }}
     tier: backend
 spec:
   type: ClusterIP
   selector:
-    app: {{ .Values.name }}
+    app: {{ .Values.pharmacy.name }}
     tier: backend
   ports:
-    - port: {{ .Values.service.port }}
-      targetPort: {{ .Values.containerPort }}
+    - port: {{ .Values.pharmacy.service.port }}
+      targetPort: {{ .Values.pharmacy.containerPort }}
       protocol: TCP
       name: http
