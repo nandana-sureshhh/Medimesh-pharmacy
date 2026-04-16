@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .Values.service.name }}
+  name: {{ .Values.pharmacy.service.name }}
   namespace: {{ .Values.global.namespaces.backend }}
   labels:
     app: {{ .Values.name }}
